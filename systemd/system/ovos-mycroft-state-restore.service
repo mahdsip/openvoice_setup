@@ -1,0 +1,14 @@
+[Unit]
+Description=Open Voice OS - Restore Mycroft state tmpfs
+After=local-fs.target
+RequiresMountsFor=/home/__OVOS_USER__/.local/state/mycroft /home/__OVOS_USER__/.local/state/mycroft-persistent
+Before=ovos.service
+
+[Service]
+Type=oneshot
+User=__OVOS_USER__
+Group=__OVOS_USER__
+ExecStart=/usr/bin/rsync -a "/home/__OVOS_USER__/.local/state/mycroft-persistent/" "/home/__OVOS_USER__/.local/state/mycroft/"
+
+[Install]
+WantedBy=multi-user.target

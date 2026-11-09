@@ -1,0 +1,23 @@
+{
+  "agent_protocol": {
+    "module": "hivemind-ovos-agent-plugin",
+    "hivemind-ovos-agent-plugin": {
+      "host": "127.0.0.1",
+      "port": 8181
+    }
+  },
+  "network_protocol": {
+    "hivemind-websocket-plugin": {
+      "host": "__BIND_IP__",
+      "port": 5678,
+      "ssl": false
+    }
+  },
+  "database": {
+    "module": "hivemind-json-db-plugin",
+    "hivemind-json-db-plugin": {
+      "name": "clients",
+      "subfolder": "hivemind-core"
+    }
+  }
+}

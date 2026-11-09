@@ -1,0 +1,18 @@
+--- a/ocp_pipeline/locale/es-es/play.intent
++++ b/ocp_pipeline/locale/es-es/play.intent
+@@ -1,2 +1,13 @@
+ iniciar {query}
+-reproducir {query}
+\ No newline at end of file
++reproducir {query}
++pon (música|canciones) de {query}
++ponme (música|canciones) de {query}
++pon (la canción|el álbum|el disco) {query}
++ponme (la canción|el álbum|el disco) {query}
++reproduce {query}
++quiero escuchar {query}
++pon {query} en plex
++pon (música|canciones|algo) {query}
++ponme (música|canciones|algo) {query}
++pon (la|mi) (lista|playlist) {query}
++ponme (la|mi) (lista|playlist) {query}

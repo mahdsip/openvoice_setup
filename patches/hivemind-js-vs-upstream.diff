@@ -1,0 +1,62 @@
+--- a/static/js/vendor/hivemind.js (upstream HiveMind-js)
++++ b/static/js/vendor/hivemind.js
+@@ -1,4 +1,16 @@
++// Per-browser session id, kept across reloads. HiveMind 4 rejects messages
++// from non-admin clients that fall back to the shared "default" session.
++function webchatSessionId() {
++    let sid = localStorage.getItem("hivemind_webchat_session");
++    if (!sid) {
++        sid = "webchat-" + Array.from(crypto.getRandomValues(new Uint8Array(8)),
++            b => b.toString(16).padStart(2, "0")).join("");
++        localStorage.setItem("hivemind_webchat_session", sid);
++    }
++    return sid;
++}
+ 
++
+ function JarbasHiveMind() { }
+ 
+ // AES encryption
+@@ -39,7 +51,8 @@
+         name: 'AES-GCM',
+         iv
+     }, encryption_key, fromHexString(hex_ciphertext))
+-    return String.fromCharCode.apply(null, new Uint8Array(decrypted));
++    // decode as UTF-8: fromCharCode maps each byte to a char and garbles accents
++    return new TextDecoder("utf-8").decode(decrypted);
+ 
+ }
+ 
+@@ -69,6 +82,21 @@
+         message = JSON.parse(message)
+     }
+ 
++    // Answer the server HELLO with our per-browser session: HiveMind only
++    // registers (and routes replies to) clients that send a HELLO, and
++    // without it every utterance runs in the local "default" session,
++    // so answers are spoken on the device instead of shown in the chat.
++    if (message.msg_type === "hello") {
++        let hello = {"msg_type": "hello", "payload": {
++            "session": {"session_id": webchatSessionId(), "lang": "es-ES"}}};
++        let out = hello;
++        if (this.encryptionKey) {
++            out = await this.encrypt_msg(JSON.stringify(hello));
++        }
++        this.send(JSON.stringify(out));
++        return;
++    }
++
+     if (message.msg_type === "bus") {
+         let mycroft_message = message.payload;
+         this.onMycroftMessage(mycroft_message)
+@@ -115,8 +143,9 @@
+ JarbasHiveMind.prototype.sendUtterance = async function (utterance) {
+     let payload = {
+         'type': "recognizer_loop:utterance",
+-        "data": {"utterances": [utterance]},
++        "data": {"utterances": [utterance], "lang": "es-ES"},
+         "context": {
++            "session": {"session_id": webchatSessionId(), "lang": "es-ES"},
+             "source": "javascript",
+             "destination": "HiveMind",
+             "platform": "JarbasHivemindJsV0.1"

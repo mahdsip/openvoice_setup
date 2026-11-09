@@ -1,0 +1,11 @@
+[Unit]
+Description=Open Voice OS - Periodic Mycroft state sync
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=5m
+AccuracySec=1min
+Persistent=true
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,16 @@
+[Unit]
+Documentation=https://openvoiceos.github.io/ovos-docker/about/glossary/components/#ovos-phal
+Description=Open Voice OS - PHAL Admin
+After=network-online.target
+
+[Service]
+Environment=XDG_CONFIG_HOME=/home/__OVOS_USER__/.config
+Environment=XDG_CACHE_HOME=/home/__OVOS_USER__/.cache
+WorkingDirectory=/home/__OVOS_USER__/.venvs/ovos
+ExecStart=/usr/local/bin/wrapper-ovos-phal-admin.sh
+ExecReload=/usr/bin/kill -s HUP $MAINPID
+Restart=on-failure
+RestartSec=1s
+
+[Install]
+WantedBy=default.target

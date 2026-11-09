@@ -1,0 +1,5 @@
+{
+  "host": "${PLEX_URL}",
+  "token": "${PLEX_TOKEN}",
+  "__mycroft_skill_firstrun": false
+}

@@ -1,0 +1,14 @@
+# Real secrets: never commit
+setup.env
+*.env
+!*.env.example
+proxy.env
+*.credentials
+*.pem
+
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+.DS_Store

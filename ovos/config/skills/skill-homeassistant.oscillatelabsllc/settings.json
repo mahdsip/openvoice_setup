@@ -1,0 +1,5 @@
+{
+  "api_key": "${HA_TOKEN}",
+  "host": "${HA_URL}",
+  "__mycroft_skill_firstrun": false
+}

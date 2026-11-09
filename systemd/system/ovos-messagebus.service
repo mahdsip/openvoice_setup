@@ -1,0 +1,20 @@
+[Unit]
+Documentation=https://openvoiceos.github.io/ovos-docker/about/glossary/components/#ovos-messagebus
+Description=Open Voice OS - Message bus service
+PartOf=ovos.service
+Requires=ovos.service
+
+[Service]
+User=__OVOS_USER__
+Group=__OVOS_USER__
+Environment=HOME=/home/__OVOS_USER__
+Environment=XDG_RUNTIME_DIR=/run/user/1000
+Environment=DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+EnvironmentFile=-/home/__OVOS_USER__/.config/environment.d/99-ovos-tuning.conf
+ExecStart=/home/__OVOS_USER__/.local/bin/ovos_messagebus-aarch64-unknown-linux-gnu
+ExecReload=/usr/bin/kill -s HUP $MAINPID
+Restart=on-failure
+RestartSec=1s
+
+[Install]
+WantedBy=ovos.service

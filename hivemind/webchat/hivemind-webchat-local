@@ -1,0 +1,23 @@
+#!/home/__OVOS_USER__/.venvs/hivemind/bin/python
+"""Run hivemind-webchat bound to a single address (default loopback).
+
+Upstream calls HTTPServer.listen(port) with no address, i.e. all interfaces,
+and serves /static/ from the working directory; the systemd unit pins the
+working directory to the package static folder.
+"""
+import os
+import tornado.httpserver
+
+BIND = os.environ.get("WEBCHAT_BIND", "127.0.0.1")
+_listen = tornado.httpserver.HTTPServer.listen
+
+
+def _bound_listen(self, port, address=None, **kwargs):
+    return _listen(self, port, address=BIND, **kwargs)
+
+
+tornado.httpserver.HTTPServer.listen = _bound_listen
+
+from hivemind_webchat.webchat import main  # noqa: E402
+
+main(port=int(os.environ.get("WEBCHAT_PORT", "9090")))

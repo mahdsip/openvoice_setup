@@ -1,0 +1,17 @@
+--- a/hivemind_webchat/templates/index.html
++++ b/hivemind_webchat/templates/index.html
+@@ -62,10 +62,10 @@
+ 
+ 
+ <script src="static/js/jquery-3.2.1.min.js"></script>
+-<script src="https://jarbashivemind.github.io/HiveMind-js/static/js/asmcrypto.js"></script>
+-<script src="https://jarbashivemind.github.io/HiveMind-js/static/js/webcrypto-shim.js"></script>
+-<script src="https://jarbashivemind.github.io/HiveMind-js/static/js/hivemind.js"></script>
+-<script src="static/js/app.js"></script>
++<script src="static/js/vendor/asmcrypto.js"></script>
++<script src="static/js/vendor/webcrypto-shim.js"></script>
++<script src="static/js/vendor/hivemind.js?v=utf8"></script>
++<script src="static/js/app.js?v=utf8"></script>
+ <script type="text/javascript">
+     document.getElementById('writer').style.display = 'block';
+ </script>

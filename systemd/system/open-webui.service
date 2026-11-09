@@ -1,0 +1,21 @@
+[Unit]
+Description=Open WebUI chat front-end for familIA (LAN __BIND_IP__)
+After=network-online.target familia-ovos-proxy.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=__OVOS_USER__
+Environment=HOME=/home/__OVOS_USER__
+Environment=TMPDIR=/home/__OVOS_USER__/.cache/open-webui-tmp
+Environment=HF_HOME=/home/__OVOS_USER__/.cache/huggingface
+EnvironmentFile=/home/__OVOS_USER__/.config/open-webui/env
+ExecStartPre=/bin/mkdir -p /home/__OVOS_USER__/.cache/open-webui-tmp
+ExecStart=/home/__OVOS_USER__/.venvs/openwebui/bin/open-webui serve --host ${HOST} --port ${PORT}
+Restart=on-failure
+RestartSec=10
+MemoryHigh=1400M
+MemoryMax=1600M
+
+[Install]
+WantedBy=multi-user.target

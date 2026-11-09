@@ -1,0 +1,2 @@
+tmpfs /home/__OVOS_USER__/.local/state/mycroft tmpfs defaults,noatime,nosuid,nodev,size=100M,uid=__OVOS_UID__,gid=__OVOS_GID__,mode=0755 0 0
+tmpfs /tmp tmpfs defaults,noatime,nosuid,nodev,size=512M,mode=1777 0 0

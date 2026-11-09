@@ -1,0 +1,17 @@
+[Unit]
+Description=HiveMind core (remote access to OVOS, LAN __BIND_IP__)
+After=ovos-messagebus.service network-online.target
+Wants=network-online.target
+Requires=ovos-messagebus.service
+
+[Service]
+Type=simple
+User=__OVOS_USER__
+Environment=HOME=/home/__OVOS_USER__
+WorkingDirectory=/home/__OVOS_USER__/.config/hivemind-core
+ExecStart=/home/__OVOS_USER__/.venvs/hivemind/bin/hivemind-core listen
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

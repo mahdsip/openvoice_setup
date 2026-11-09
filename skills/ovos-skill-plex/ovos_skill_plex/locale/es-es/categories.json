@@ -1,0 +1,337 @@
+{
+  "rock": {
+    "style": [
+      "rock"
+    ]
+  },
+  "rock en español": {
+    "style": [
+      "rock en espanol",
+      "latin rock"
+    ]
+  },
+  "pop": {
+    "style": [
+      "pop"
+    ]
+  },
+  "metal": {
+    "style": [
+      "metal"
+    ]
+  },
+  "heavy": {
+    "style": [
+      "metal"
+    ]
+  },
+  "punk": {
+    "style": [
+      "punk"
+    ]
+  },
+  "indie": {
+    "style": [
+      "indie"
+    ]
+  },
+  "jazz": {
+    "genre": [
+      "jazz"
+    ]
+  },
+  "blues": {
+    "genre": [
+      "blues"
+    ]
+  },
+  "clásica": {
+    "genre": [
+      "classical"
+    ]
+  },
+  "música clásica": {
+    "genre": [
+      "classical"
+    ]
+  },
+  "latina": {
+    "genre": [
+      "latin"
+    ],
+    "style": [
+      "latin"
+    ]
+  },
+  "latino": {
+    "genre": [
+      "latin"
+    ],
+    "style": [
+      "latin"
+    ]
+  },
+  "electrónica": {
+    "genre": [
+      "electronic"
+    ],
+    "style": [
+      "techno",
+      "electronic",
+      "house"
+    ]
+  },
+  "techno": {
+    "style": [
+      "techno"
+    ]
+  },
+  "para bailar": {
+    "style": [
+      "dance",
+      "disco",
+      "club"
+    ]
+  },
+  "bailable": {
+    "style": [
+      "dance",
+      "disco",
+      "club"
+    ]
+  },
+  "de baile": {
+    "style": [
+      "dance",
+      "disco",
+      "club"
+    ]
+  },
+  "dance": {
+    "style": [
+      "dance",
+      "disco",
+      "club"
+    ]
+  },
+  "disco": {
+    "style": [
+      "disco"
+    ]
+  },
+  "flamenco": {
+    "style": [
+      "flamenco"
+    ]
+  },
+  "country": {
+    "genre": [
+      "country"
+    ]
+  },
+  "folk": {
+    "genre": [
+      "folk"
+    ],
+    "style": [
+      "folk"
+    ]
+  },
+  "rap": {
+    "genre": [
+      "rap"
+    ]
+  },
+  "hip hop": {
+    "genre": [
+      "rap"
+    ]
+  },
+  "r&b": {
+    "genre": [
+      "r&b"
+    ]
+  },
+  "soul": {
+    "genre": [
+      "r&b"
+    ],
+    "style": [
+      "soul"
+    ]
+  },
+  "infantil": {
+    "genre": [
+      "children"
+    ]
+  },
+  "para niños": {
+    "genre": [
+      "children"
+    ]
+  },
+  "de niños": {
+    "genre": [
+      "children"
+    ]
+  },
+  "bandas sonoras": {
+    "genre": [
+      "stage & screen"
+    ]
+  },
+  "banda sonora": {
+    "genre": [
+      "stage & screen"
+    ]
+  },
+  "de películas": {
+    "genre": [
+      "stage & screen"
+    ]
+  },
+  "new age": {
+    "genre": [
+      "new age"
+    ]
+  },
+  "tranquila": {
+    "mood": [
+      "calm",
+      "relaxed",
+      "soothing",
+      "laid-back",
+      "gentle"
+    ]
+  },
+  "tranquilo": {
+    "mood": [
+      "calm",
+      "relaxed",
+      "soothing",
+      "laid-back",
+      "gentle"
+    ]
+  },
+  "relajante": {
+    "mood": [
+      "calm",
+      "relaxed",
+      "soothing",
+      "laid-back",
+      "gentle"
+    ]
+  },
+  "relajada": {
+    "mood": [
+      "calm",
+      "relaxed",
+      "soothing",
+      "laid-back",
+      "gentle"
+    ]
+  },
+  "para relajarse": {
+    "mood": [
+      "calm",
+      "relaxed",
+      "soothing",
+      "laid-back",
+      "gentle"
+    ]
+  },
+  "animada": {
+    "mood": [
+      "energetic",
+      "exuberant",
+      "fun",
+      "happy",
+      "joyous",
+      "rousing"
+    ]
+  },
+  "animado": {
+    "mood": [
+      "energetic",
+      "exuberant",
+      "fun",
+      "happy",
+      "joyous",
+      "rousing"
+    ]
+  },
+  "alegre": {
+    "mood": [
+      "energetic",
+      "exuberant",
+      "fun",
+      "happy",
+      "joyous",
+      "rousing"
+    ]
+  },
+  "con energía": {
+    "mood": [
+      "energetic",
+      "exuberant",
+      "rousing"
+    ]
+  },
+  "movida": {
+    "mood": [
+      "energetic",
+      "exuberant",
+      "fun",
+      "rousing"
+    ]
+  },
+  "marchosa": {
+    "mood": [
+      "energetic",
+      "exuberant",
+      "fun",
+      "rousing"
+    ]
+  },
+  "triste": {
+    "mood": [
+      "melancholy",
+      "sad"
+    ]
+  },
+  "melancólica": {
+    "mood": [
+      "melancholy",
+      "sad"
+    ]
+  },
+  "romántica": {
+    "mood": [
+      "romantic",
+      "sensual"
+    ]
+  },
+  "romántico": {
+    "mood": [
+      "romantic",
+      "sensual"
+    ]
+  },
+  "baile": {
+    "style": [
+      "dance",
+      "disco",
+      "club"
+    ]
+  },
+  "niños": {
+    "genre": [
+      "children"
+    ]
+  },
+  "películas": {
+    "genre": [
+      "stage & screen"
+    ]
+  }
+}

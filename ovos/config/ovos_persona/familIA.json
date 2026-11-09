@@ -1,0 +1,14 @@
+{
+  "name": "familIA",
+  "solvers": [
+    "ovos-solver-openai-plugin"
+  ],
+  "ovos-solver-openai-plugin": {
+    "api_url": "http://127.0.0.1:8080/v1",
+    "key": "${FAMILIA_PROXY_API_KEY}",
+    "model": "familia",
+    "max_tokens": 300,
+    "temperature": "0.2",
+    "top_p": "0.1"
+  }
+}

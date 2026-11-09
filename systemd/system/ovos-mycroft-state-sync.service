@@ -1,0 +1,10 @@
+[Unit]
+Description=Open Voice OS - Sync Mycroft state tmpfs
+After=local-fs.target
+RequiresMountsFor=/home/__OVOS_USER__/.local/state/mycroft /home/__OVOS_USER__/.local/state/mycroft-persistent
+
+[Service]
+Type=oneshot
+User=__OVOS_USER__
+Group=__OVOS_USER__
+ExecStart=/usr/bin/rsync -a --delete "/home/__OVOS_USER__/.local/state/mycroft/" "/home/__OVOS_USER__/.local/state/mycroft-persistent/"

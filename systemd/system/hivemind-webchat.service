@@ -1,0 +1,17 @@
+[Unit]
+Description=HiveMind webchat page (LAN __BIND_IP__)
+After=hivemind-core.service network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=__OVOS_USER__
+Environment=HOME=/home/__OVOS_USER__
+Environment=WEBCHAT_BIND=__BIND_IP__
+WorkingDirectory=/home/__OVOS_USER__/.venvs/hivemind/lib/python3.13/site-packages/hivemind_webchat/static
+ExecStart=/home/__OVOS_USER__/.local/bin/hivemind-webchat-local
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

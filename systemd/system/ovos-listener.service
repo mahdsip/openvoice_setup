@@ -1,0 +1,26 @@
+[Unit]
+Documentation=https://openvoiceos.github.io/ovos-docker/about/glossary/components/#ovos-listener
+Description=Open Voice OS - Listener
+PartOf=ovos.service
+Requires=ovos.service ovos-messagebus.service ovos-core.service ovos-phal.service
+After=ovos.service ovos-messagebus.service ovos-core.service ovos-phal.service
+
+[Service]
+User=__OVOS_USER__
+Group=__OVOS_USER__
+Environment=HOME=/home/__OVOS_USER__
+Environment=XDG_RUNTIME_DIR=/run/user/1000
+Environment=DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+EnvironmentFile=-/home/__OVOS_USER__/.config/environment.d/99-ovos-tuning.conf
+WorkingDirectory=/home/__OVOS_USER__/.venvs/ovos
+ExecStart=/home/__OVOS_USER__/.venvs/ovos/bin/ovos-dinkum-listener
+ExecReload=/usr/bin/kill -s HUP $MAINPID
+Restart=on-failure
+RestartSec=1s
+TimeoutStartSec=5min
+Nice=-10
+IOSchedulingClass=best-effort
+IOSchedulingPriority=0
+
+[Install]
+WantedBy=ovos.service
